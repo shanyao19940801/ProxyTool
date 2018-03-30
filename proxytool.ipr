@@ -28,6 +28,10 @@
             <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
             <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.5" />
             <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
+            <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.34" />
+            <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.2" />
+            <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.14" />
+            <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.4" />
             <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
             <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.2" />
             <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
@@ -239,6 +243,28 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/github/stefanbirkner/system-rules/1.16.1/system-rules-1.16.1-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: com.mchange:c3p0:0.9.5.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/mchange/c3p0/0.9.5.2/c3p0-0.9.5.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/mchange/c3p0/0.9.5.2/c3p0-0.9.5.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/mchange/c3p0/0.9.5.2/c3p0-0.9.5.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.mchange:mchange-commons-java:0.2.14">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/mchange/mchange-commons-java/0.2.14/mchange-commons-java-0.2.14.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/mchange/mchange-commons-java/0.2.14/mchange-commons-java-0.2.14-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/mchange/mchange-commons-java/0.2.14/mchange-commons-java-0.2.14-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: commons-beanutils:commons-beanutils:1.8.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar!/" />
@@ -349,6 +375,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: mysql:mysql-connector-java:5.1.34">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.34/mysql-connector-java-5.1.34.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.34/mysql-connector-java-5.1.34-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.34/mysql-connector-java-5.1.34-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: net.sf.ezmorph:ezmorph:1.0.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar!/" />
@@ -424,6 +461,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.7.2/jsoup-1.7.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.mybatis:mybatis:3.4.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.4/mybatis-3.4.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.4/mybatis-3.4.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.4/mybatis-3.4.4-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.slf4j:slf4j-api:1.7.6">

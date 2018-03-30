@@ -38,7 +38,7 @@ public class ProxyPageTask implements Runnable{
         HttpGet request = null;
         try {
             Page page = new Page();
-            if (isUseProxy) {
+            if (isUseProxy && ProxyPool.proxyQueue.size() > 0) {
 
                 currentProxy = ProxyPool.proxyQueue.take();
                 HttpHost proxy = new HttpHost(currentProxy.getIp(), currentProxy.getPort());
@@ -88,9 +88,11 @@ public class ProxyPageTask implements Runnable{
         IPageParser parser = ParserFactory.getParserClass(ProxyPool.proxyMap.get(url));
         List<Proxy> proxyList =  parser.parser(page.getHtml());
         if (isContinueDownProxy) {
-            for (Proxy proxy : proxyList) {
-                //测试代理是否可用
-                proxyHttpClient.getProxyProxyTestExector().execute(new ProxyTestTask(proxy));
+            if (proxyList != null && proxyList.size() > 0) {
+                for (Proxy proxy : proxyList) {
+                    //测试代理是否可用
+                    proxyHttpClient.getProxyProxyTestExector().execute(new ProxyTestTask(proxy));
+                }
             }
         }
 
