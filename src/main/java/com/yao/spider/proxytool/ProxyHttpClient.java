@@ -1,9 +1,9 @@
 package com.yao.spider.proxytool;
 
-import com.yao.spider.core.constants.ProxyConstants;
+import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.core.http.client.AbstractHttpClient;
 import com.yao.spider.core.util.MyIOutils;
-import com.yao.spider.proxytool.entity.Proxy;
+import com.yao.spider.core.constants.ProxyConstants;
 import com.yao.spider.proxytool.task.ProxyPageTask;
 import com.yao.spider.proxytool.task.ProxySerializeTask;
 import org.slf4j.Logger;
@@ -79,35 +79,34 @@ public class ProxyHttpClient extends AbstractHttpClient {
             List<Proxy> proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE);
             if (proxyList != null) {
                 ProxyPool.proxyQueue = new DelayQueue<Proxy>(proxyList);
-                /*while (true) {
-                    if (ProxyPool.proxyQueue.size() < 100)
-                        break;
-                }*/
             }
         } catch (Exception e) {
         }
-        new Thread(new Runnable() {
-            public void run() {
-                while(isContinue) {
+        //是否爬取新的代理
+        if (ProxyConstants.ISUSERFILE_ONLY) {
+            new Thread(new Runnable() {
+                public void run() {
+//                while(isContinue) {
                     for (String url : ProxyPool.proxyMap.keySet()) {
                         proxyDoloadThreadExector.execute(new ProxyPageTask(url, false));
                         try {
                             Thread.sleep(5000);
                         } catch (InterruptedException e) {
-                            logger.error(e.getMessage(),e);
+                            logger.error(e.getMessage(), e);
                         }
                     }
                     try {
-                        Thread.sleep(1000*60*60);
+                        Thread.sleep(1000 * 60 * 60);
                     } catch (InterruptedException e) {
                         logger.error(e.getMessage(), e);
                     }
+//                }
                 }
-            }
-        }).start();
+            }).start();
 
-        //序列化代理线程
-        new Thread(new ProxySerializeTask()).start();
+            //序列化代理线程
+            new Thread(new ProxySerializeTask()).start();
+        }
 
     }
 

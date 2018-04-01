@@ -6,6 +6,8 @@ package com.yao.spider.core.constants;
 public class ProxyConstants {
     //是否只需要匿名代理
     public static final boolean anonymousFlag = false;
+    //是否爬取新的的代理
+    public static final boolean ISUSERFILE_ONLY = false;
     public static final String STANDARD = "standard";
     public static int SocketTimeout = 10000;
     public static int ConnectionTimeout = 10000;
@@ -15,8 +17,10 @@ public class ProxyConstants {
 
     public static final long TIME_INTERVAL = 1000;
     //文件路劲地址
-    public static final String FILE_PATH= "src/main/resources/file";
-
+//    public static final String FILE_PATH= "src/main/resources/file";
+//    public static final String FILE_PATH= "src/main/resources/file";
+      public static final String FILE_PATH= "../proxy/proxy.ser";
+    public static String RESOURCES__FILE_PATH;
     //保存序列化代理的文件名
     public static String PROXYSER_FILE_NMAE = "proxy.ser";
 
@@ -32,6 +36,10 @@ public class ProxyConstants {
             "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0",
             "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
     };
+
+    static {
+        RESOURCES__FILE_PATH = ProxyConstants.class.getClassLoader().getResource("").getPath() + "file";
+    }
 }
 
 /*"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
