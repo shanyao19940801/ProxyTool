@@ -49,20 +49,15 @@ public class ProxyPageTask implements Runnable{
             }
             page.setProxy(currentProxy);
             int status = page.getStatusCode();
-            String logStr = Thread.currentThread().getName() + " " + getProxyStr(currentProxy) +
-                    " executing request url: " + page.getUrl() + " response statusCode:" + status;
-
-            logger.debug(logStr);
 
             if (status == 200) {
                 handle(page);
             } else {
-                Thread.sleep(100);
+                Thread.sleep(1000);
                 retry();
             }
 
         } catch (Exception e) {
-//            logger.error(e.getMessage(), e);
             retry();
         }  finally {
 

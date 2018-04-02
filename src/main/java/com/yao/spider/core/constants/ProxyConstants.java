@@ -7,7 +7,7 @@ public class ProxyConstants {
     //是否只需要匿名代理
     public static final boolean anonymousFlag = false;
     //是否爬取新的的代理
-    public static final boolean ISUSERFILE_ONLY = false;
+    public static final boolean ISUSERFILE_ONLY = true;
     public static final String STANDARD = "standard";
     public static int SocketTimeout = 10000;
     public static int ConnectionTimeout = 10000;

@@ -28,21 +28,23 @@ public class ProxyPool {
     public static final Map<String,Class> proxyMap = new HashMap<String, Class>();
 
     static {
+        //只获取最近验证的代理
         for (int i = 1; i <= 66; i++) {
             proxyMap.put("https://www.kuaidaili.com/free/intr/"+ i +"/", KuaidailiProxyListParser.class);
             if (!ProxyConstants.anonymousFlag) {
                 proxyMap.put("https://www.kuaidaili.com/free/inha/" + i + "/", KuaidailiProxyListParser.class);//高匿
             }
         }
-        int pages = 8;
+        //只获取最近验证的代理
+        int pages = 10;
         for (int i = 1; i <= pages; i++) {
             proxyMap.put("http://www.xicidaili.com/wt/" + i + ".html", XicidailiProxyListParser.class);
             proxyMap.put("http://www.xicidaili.com/nn/" + i + ".html", XicidailiProxyListParser.class);
             proxyMap.put("http://www.xicidaili.com/wn/" + i + ".html", XicidailiProxyListParser.class);
             proxyMap.put("http://www.xicidaili.com/nt/" + i + ".html", XicidailiProxyListParser.class);
             proxyMap.put("http://www.ip181.com/daili/" + i + ".html", Ip181ProxyListParser.class);
-            proxyMap.put("http://www.mimiip.com/gngao/" + i, MimiipProxyListParser.class);//高匿
-            proxyMap.put("http://www.mimiip.com/gnpu/" + i, MimiipProxyListParser.class);//普匿
+            proxyMap.put("http://www.mimiip.com/gngao/" + i, MimiipProxyListParser.class);
+            proxyMap.put("http://www.mimiip.com/gnpu/" + i, MimiipProxyListParser.class);
             proxyMap.put("http://www.66ip.cn/" + i + ".html", Ip66ProxyListParser.class);
             for (int j = 1; j < 34; j++) {
                 proxyMap.put("http://www.66ip.cn/areaindex_" + j + "/" + i + ".html", Ip66ProxyListParser.class);

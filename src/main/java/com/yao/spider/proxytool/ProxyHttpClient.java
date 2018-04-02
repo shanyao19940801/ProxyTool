@@ -75,6 +75,7 @@ public class ProxyHttpClient extends AbstractHttpClient {
     }
 
     public void startProxy() {
+        logger.info("代理工具线程开始");
         try {
             List<Proxy> proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE);
             if (proxyList != null) {

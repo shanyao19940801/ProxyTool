@@ -28,10 +28,10 @@ public class ProxySerializeTask implements Runnable{
             ProxyPool.lock.readLock().lock();
             try {
                 proxyArray = new ArrayList<Proxy>();
-                int i = 0;
                 for (Proxy proxy : ProxyPool.proxySet) {
                     proxyArray.add(proxy);
                 }
+                logger.info("本次序列化代理条数;"+proxyArray.size());
                 MyIOutils.serializeObject(proxyArray, ProxyConstants.PROXYSER_FILE_NMAE);
             } catch (Exception e) {
                 logger.error(e.getMessage(), e);
