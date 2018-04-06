@@ -7,4 +7,5 @@ import javax.jws.WebService;
  */
 @WebService
 public interface IGetProxyListService {
+    public String getProxyList(String params);
 }

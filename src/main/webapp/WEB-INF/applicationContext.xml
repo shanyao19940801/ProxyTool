@@ -20,7 +20,7 @@
 
     <!--<bean id="userServiceBean" class="com.yao.ws.service.Impl.UserServiceImpl"/>-->
     <bean id="outLoggingInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
-    <bean id="getspider" class="com.yao.spider.proxytool.service.Impl.GetProxyListServiceImpl"/>
+    <bean id="getspider" class="com.yao.spider.proxytool.service.GetProxyListServiceImpl"/>
     <!-- 注意下面的address，这里的address的名称就是访问的WebService的name -->
 
     <!--<jaxws:server id="userService" serviceClass="com.yao.ws.service.IUserService" address="/Users">

@@ -1,10 +1,11 @@
-package com.yao.spider.proxytool.service.Impl;
+package com.yao.spider.proxytool.service;
 
 import com.yao.spider.core.constants.ProxyConstants;
 import com.yao.spider.core.util.MyIOutils;
 import com.yao.spider.proxytool.entity.MyMessage;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.proxytool.service.IGetProxyListService;
+import net.sf.json.JSONSerializer;
 import org.eclipse.jetty.util.ajax.JSON;
 
 import javax.jws.WebService;
@@ -29,7 +30,7 @@ public class GetProxyListServiceImpl implements IGetProxyListService{
             myMessage.setResultCount(0);
             return "error";
         }
-        String resultString = JSON.toString(myMessage);
+        String resultString = JSONSerializer.toJSON(myMessage).toString();
         return resultString;
     }
 }
