@@ -20,10 +20,13 @@ public class GetProxyListServiceImpl implements IGetProxyListService{
         MyMessage myMessage = new MyMessage();
         List<Proxy> proxyList = null;
         try {
-            proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE);
-            myMessage.setStatus(200);
-            myMessage.setResultCount(proxyList.size());
-            myMessage.setProxyList(proxyList);
+            proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE_EXIST);
+            if (proxyList == null) {
+                proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE);
+            }
+        myMessage.setStatus(200);
+        myMessage.setResultCount(proxyList.size());
+        myMessage.setProxyList(proxyList);
         } catch (Exception e) {
             e.printStackTrace();
             myMessage.setStatus(400);

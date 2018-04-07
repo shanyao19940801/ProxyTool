@@ -96,11 +96,6 @@ public class ProxyHttpClient extends AbstractHttpClient {
                             logger.error(e.getMessage(), e);
                         }
                     }
-                    try {
-                        Thread.sleep(1000 * 60 * 60);
-                    } catch (InterruptedException e) {
-                        logger.error(e.getMessage(), e);
-                    }
 //                }
                 }
             }).start();

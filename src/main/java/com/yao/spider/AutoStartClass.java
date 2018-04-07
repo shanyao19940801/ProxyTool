@@ -10,7 +10,7 @@ import javax.servlet.ServletContextListener;
  */
 public class AutoStartClass implements ServletContextListener {
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-//        ProxyHttpClient.getInstance().startProxy();
+        ProxyHttpClient.getInstance().startProxy();
 
     }
 

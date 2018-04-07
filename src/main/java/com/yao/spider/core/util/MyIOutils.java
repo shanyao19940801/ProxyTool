@@ -68,6 +68,44 @@ public class MyIOutils {
         return object;
     }
 
+    public static void compyFileDefaultPath(String oldName, String newName) {
+        String oldPath = ProxyConstants.RESOURCES__FILE_PATH + "/" + oldName;
+        String newPath = ProxyConstants.RESOURCES__FILE_PATH + "/" + newName;
+        MyIOutils.compyFile(oldPath, newPath);
+    }
+    public static void compyFile(String oldPath, String newPath) {
+        File oldFile = new File(oldPath);
+        File newFile = new File(newPath);
+        FileInputStream inputStream = null;
+        FileOutputStream outputStream = null;
+        if (oldFile.exists()) {
+            try {
+                inputStream = new FileInputStream(oldFile);
+                outputStream = new FileOutputStream(newFile);
+                byte[] b = new byte[1024];
+                int n = 0;
+                while ((n=inputStream.read(b)) != -1) {
+                    outputStream.write(b, 0 , n);
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (inputStream != null) {
+                        inputStream.close();
+                    }
+                    if (outputStream != null) {
+                        outputStream.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
 
 
 }

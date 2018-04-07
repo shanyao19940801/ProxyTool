@@ -2,18 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:jaxws="http://cxf.apache.org/jaxws"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/cache"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                 http://www.springframework.org/schema/context
                 http://www.springframework.org/schema/context/spring-context-3.0.xsd
                 http://cxf.apache.org/jaxws
-                http://cxf.apache.org/schemas/jaxws.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
-    <!--<context:annotation-config />
-    &lt;!&ndash;spring扫描注解的配置&ndash;&gt;
-    <context:component-scan base-package="com.yao.spider.proxytool.job"/>
-    &lt;!&ndash;开启这个配置，spring才能识别@Scheduled注解&ndash;&gt;
-    <task:annotation-driven/>-->
+                http://cxf.apache.org/schemas/jaxws.xsd
+                http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+                http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    <!--下面两句确认注解方式注入bean-->
+    <context:component-scan base-package="com.yao.spider" ></context:component-scan>
+    <!--只会扫描属性上的注解-->
+    <context:annotation-config></context:annotation-config>
+    <!--<bean id="firstCron" class="com.yao.spider.proxytool.job.SpiderJob"/>-->
+    <!--<task:scheduler id="qbScheduler" pool-size="10"/>-->
+    <!--<task:annotation-driven scheduler="qbScheduler" mode="proxy"/>-->
+    <task:annotation-driven/>
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <!--<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>-->
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>

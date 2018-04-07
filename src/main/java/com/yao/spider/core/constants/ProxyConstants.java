@@ -23,6 +23,8 @@ public class ProxyConstants {
     public static String RESOURCES__FILE_PATH;
     //保存序列化代理的文件名
     public static String PROXYSER_FILE_NMAE = "proxy.ser";
+    //已经爬取的线程文件
+    public static String PROXYSER_FILE_NMAE_EXIST = "proxy_exist.ser";
 
     public final static String[] userAgentArray = new String[]{
             "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36",
