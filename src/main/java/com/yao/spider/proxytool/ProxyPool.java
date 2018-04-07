@@ -29,7 +29,7 @@ public class ProxyPool {
 
     static {
         //只获取最近验证的代理
-        for (int i = 1; i <= 66; i++) {
+        for (int i = 1; i <= 50; i++) {
             proxyMap.put("https://www.kuaidaili.com/free/intr/"+ i +"/", KuaidailiProxyListParser.class);
             if (!ProxyConstants.anonymousFlag) {
                 proxyMap.put("https://www.kuaidaili.com/free/inha/" + i + "/", KuaidailiProxyListParser.class);//高匿
@@ -46,9 +46,9 @@ public class ProxyPool {
             proxyMap.put("http://www.mimiip.com/gngao/" + i, MimiipProxyListParser.class);
             proxyMap.put("http://www.mimiip.com/gnpu/" + i, MimiipProxyListParser.class);
             proxyMap.put("http://www.66ip.cn/" + i + ".html", Ip66ProxyListParser.class);
-            for (int j = 1; j < 34; j++) {
+            /*for (int j = 1; j < 34; j++) {
                 proxyMap.put("http://www.66ip.cn/areaindex_" + j + "/" + i + ".html", Ip66ProxyListParser.class);
-            }
+            }*/
         }
     }
 }

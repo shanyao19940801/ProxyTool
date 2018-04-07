@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Component("spiderJob")
 public class SpiderJob {
-    @Scheduled(cron = "0 0 8,16,24 * * ?")
+    @Scheduled(cron = "0 0 8,16,23 * * ?")
     public void startSpider() {
         MyIOutils.compyFile(ProxyConstants.PROXYSER_FILE_NMAE, ProxyConstants.PROXYSER_FILE_NMAE_EXIST);
         ProxyHttpClient.getInstance().startProxy();
