@@ -7,5 +7,5 @@
   <br>目前项目只提供一种获取方式：webserice接口获取，代用该接口可以获取已经爬取的免费代理
   <br>返回数据类型：json字符串
   <br>实例：[请求实例](https://github.com/shanyao19940801/ProxyTool/blob/master/src/main/java/com/yao/spider/proxytool/client/WebServiceClient.java)
-  <br>url地址：[URL]（http://122.112.245.251:8080/services/GetProxys?wsdl）
+  <br>url地址：[URL](http://122.112.245.251:8080/services/GetProxys?wsdl)
   <br>参数：无
